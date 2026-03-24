@@ -18,5 +18,7 @@ class SfsCmsDataExtension extends Extension
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../../config/services'));
         $loader->load('services.yaml');
+        $loader->load('controller/admin_content.yaml');
+        $loader->load('controller/admin_content_version.yaml');
     }
 }

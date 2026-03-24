@@ -4,6 +4,9 @@ services:
         autoconfigure: true
         public: false
 
+    Softspring\CmsDataPlugin\Admin\ActionListener\Content\:
+        resource: '../../src/Admin/ActionListener/Content/*'
+
     sfs_cms.data_plugin.admin.content.controller:
         class: Softspring\Component\CrudlController\Controller\CrudlController
         public: true

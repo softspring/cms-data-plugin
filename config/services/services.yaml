@@ -43,9 +43,3 @@ services:
     Softspring\CmsDataPlugin\Admin\Routing\:
         resource: '../../src/Admin/Routing/*'
         tags: [ 'sfs_cms.routing_provider' ]
-
-    Softspring\CmsDataPlugin\Admin\ActionListener\Content\ImportListener: ~
-
-    Softspring\CmsDataPlugin\Admin\ActionListener\ContentVersion\ImportListener: ~
-
-    Softspring\CmsDataPlugin\Admin\ActionListener\ContentVersion\ExportListener: ~
