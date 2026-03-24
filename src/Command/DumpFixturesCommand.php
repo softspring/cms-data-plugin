@@ -4,11 +4,11 @@ namespace Softspring\CmsDataPlugin\Command;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Softspring\CmsBundle\Config\CmsConfig;
-use Softspring\CmsDataPlugin\Data\DataExporter;
 use Softspring\CmsBundle\Model\BlockInterface;
 use Softspring\CmsBundle\Model\ContentInterface;
 use Softspring\CmsBundle\Model\MenuInterface;
 use Softspring\CmsBundle\Model\RouteInterface;
+use Softspring\CmsDataPlugin\Data\DataExporter;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

@@ -6,9 +6,9 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 use Psr\Log\LoggerInterface;
+use Softspring\CmsBundle\Model\ContentVersionInterface;
 use Softspring\CmsDataPlugin\Data\DataImporter;
 use Softspring\CmsDataPlugin\IO\StructuredDataStorage;
-use Softspring\CmsBundle\Model\ContentVersionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Finder\Finder;
 

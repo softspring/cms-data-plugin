@@ -3,11 +3,6 @@
 namespace Softspring\CmsDataPlugin\Data\EntityTransformer;
 
 use DateTime;
-use Softspring\CmsDataPlugin\Data\DataTransformer;
-use Softspring\CmsDataPlugin\Data\Exception\InvalidElementException;
-use Softspring\CmsDataPlugin\Data\Exception\ReferenceNotFoundException;
-use Softspring\CmsDataPlugin\Data\Exception\RunPreloadBeforeImportException;
-use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 use Softspring\CmsBundle\Manager\ContentManagerInterface;
 use Softspring\CmsBundle\Manager\RouteManagerInterface;
 use Softspring\CmsBundle\Manager\SiteManagerInterface;
@@ -15,6 +10,11 @@ use Softspring\CmsBundle\Model\ContentInterface;
 use Softspring\CmsBundle\Model\ContentVersionInterface;
 use Softspring\CmsBundle\Model\SiteInterface;
 use Softspring\CmsBundle\Utils\Slugger;
+use Softspring\CmsDataPlugin\Data\DataTransformer;
+use Softspring\CmsDataPlugin\Data\Exception\InvalidElementException;
+use Softspring\CmsDataPlugin\Data\Exception\ReferenceNotFoundException;
+use Softspring\CmsDataPlugin\Data\Exception\RunPreloadBeforeImportException;
+use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 use Softspring\MediaBundle\EntityManager\MediaManagerInterface;
 
 abstract class ContentEntityTransformer implements ContentEntityTransformerInterface

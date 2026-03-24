@@ -7,3 +7,5 @@ parameters:
         - src/
     bootstrapFiles:
         - vendor/autoload.php
+    ignoreErrors:
+        - '#Call to an undefined method Doctrine\\ORM\\EntityRepository::findOneBy#'

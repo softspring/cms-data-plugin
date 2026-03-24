@@ -2,6 +2,7 @@
 
 namespace Softspring\CmsDataPlugin\IO;
 
+use RuntimeException;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -86,7 +87,7 @@ class ZipArchiveManager
     {
         $zip = new ZipArchive();
         if (true !== $zip->open($zipName, ZipArchive::CREATE | ZipArchive::OVERWRITE)) {
-            throw new \RuntimeException('Zip file could not be created/opened.');
+            throw new RuntimeException('Zip file could not be created/opened.');
         }
 
         $finder = new Finder();
@@ -97,7 +98,7 @@ class ZipArchiveManager
         }
 
         if (!$zip->close()) {
-            throw new \RuntimeException('Zip file could not be closed.');
+            throw new RuntimeException('Zip file could not be closed.');
         }
 
         return $zipName;

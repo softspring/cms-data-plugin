@@ -4,15 +4,15 @@ namespace Softspring\CmsDataPlugin\Data;
 
 use Exception;
 use Google\Cloud\Storage\StorageClient;
-use Softspring\CmsDataPlugin\Data\EntityTransformer\ContentEntityTransformerInterface;
-use Softspring\CmsDataPlugin\Data\EntityTransformer\EntityTransformerInterface;
-use Softspring\CmsDataPlugin\IO\StructuredDataStorage;
 use Softspring\CmsBundle\Model\BlockInterface;
 use Softspring\CmsBundle\Model\ContentInterface;
 use Softspring\CmsBundle\Model\ContentVersionInterface;
 use Softspring\CmsBundle\Model\MenuInterface;
 use Softspring\CmsBundle\Model\RouteInterface;
 use Softspring\CmsBundle\Utils\Slugger;
+use Softspring\CmsDataPlugin\Data\EntityTransformer\ContentEntityTransformerInterface;
+use Softspring\CmsDataPlugin\Data\EntityTransformer\EntityTransformerInterface;
+use Softspring\CmsDataPlugin\IO\StructuredDataStorage;
 use Symfony\Component\Filesystem\Filesystem;
 
 class DataExporter extends AbstractDataImportExport
@@ -26,8 +26,7 @@ class DataExporter extends AbstractDataImportExport
         iterable $entityTransformers,
         protected StructuredDataStorage $structuredDataStorage,
         protected Filesystem $filesystem,
-    )
-    {
+    ) {
         parent::__construct($entityTransformers);
         $this->referenceRepository = new ReferencesRepository();
     }

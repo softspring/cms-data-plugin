@@ -3,8 +3,6 @@
 namespace Softspring\CmsDataPlugin\Admin\ActionListener\ContentVersion;
 
 use Softspring\CmsBundle\Admin\ActionListener\ContentVersion\AbstractContentVersionListener;
-use Softspring\CmsDataPlugin\Data\DataExporter;
-use Softspring\CmsDataPlugin\IO\ZipArchiveManager;
 use Softspring\CmsBundle\Helper\CmsHelper;
 use Softspring\CmsBundle\Manager\ContentManagerInterface;
 use Softspring\CmsBundle\Manager\ContentVersionManagerInterface;
@@ -14,6 +12,8 @@ use Softspring\CmsBundle\Model\ContentVersionInterface;
 use Softspring\CmsBundle\Request\FlashNotifier;
 use Softspring\CmsBundle\SfsCmsEvents;
 use Softspring\CmsBundle\Utils\Slugger;
+use Softspring\CmsDataPlugin\Data\DataExporter;
+use Softspring\CmsDataPlugin\IO\ZipArchiveManager;
 use Softspring\Component\CrudlController\Event\ApplyEvent;
 use Softspring\Component\CrudlController\Event\ExceptionEvent;
 use Softspring\Component\CrudlController\Event\FailureEvent;

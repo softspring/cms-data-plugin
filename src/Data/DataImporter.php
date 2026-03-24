@@ -6,13 +6,13 @@ use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use Psr\Log\LoggerInterface;
 use Softspring\CmsBundle\Config\CmsConfig;
-use Softspring\CmsDataPlugin\Data\EntityTransformer\ContentEntityTransformerInterface;
-use Softspring\CmsDataPlugin\Data\EntityTransformer\EntityTransformerInterface;
-use Softspring\CmsDataPlugin\Data\Exception\DataTransformerNotFoundException;
 use Softspring\CmsBundle\Manager\SiteManagerInterface;
 use Softspring\CmsBundle\Model\ContentInterface;
 use Softspring\CmsBundle\Model\ContentVersionInterface;
 use Softspring\CmsBundle\Model\RouteInterface;
+use Softspring\CmsDataPlugin\Data\EntityTransformer\ContentEntityTransformerInterface;
+use Softspring\CmsDataPlugin\Data\EntityTransformer\EntityTransformerInterface;
+use Softspring\CmsDataPlugin\Data\Exception\DataTransformerNotFoundException;
 use Softspring\MediaBundle\EntityManager\MediaManagerInterface;
 
 class DataImporter extends AbstractDataImportExport

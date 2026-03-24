@@ -4,8 +4,6 @@ namespace Softspring\CmsDataPlugin\Admin\ActionListener\Content;
 
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Softspring\CmsBundle\Admin\ActionListener\Content\AbstractContentListener;
-use Softspring\CmsDataPlugin\Data\DataImporter;
-use Softspring\CmsDataPlugin\IO\ZipArchiveManager;
 use Softspring\CmsBundle\Helper\CmsHelper;
 use Softspring\CmsBundle\Manager\ContentManagerInterface;
 use Softspring\CmsBundle\Manager\ContentVersionManagerInterface;
@@ -13,6 +11,8 @@ use Softspring\CmsBundle\Manager\RouteManagerInterface;
 use Softspring\CmsBundle\Model\ContentVersionInterface;
 use Softspring\CmsBundle\Request\FlashNotifier;
 use Softspring\CmsBundle\SfsCmsEvents;
+use Softspring\CmsDataPlugin\Data\DataImporter;
+use Softspring\CmsDataPlugin\IO\ZipArchiveManager;
 use Softspring\Component\CrudlController\Event\ApplyEvent;
 use Softspring\Component\CrudlController\Event\CreateEntityEvent;
 use Softspring\Component\CrudlController\Event\ExceptionEvent;

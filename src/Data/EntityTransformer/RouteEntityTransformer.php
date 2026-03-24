@@ -3,10 +3,6 @@
 namespace Softspring\CmsDataPlugin\Data\EntityTransformer;
 
 use Exception;
-use Softspring\CmsDataPlugin\Data\Exception\InvalidElementException;
-use Softspring\CmsDataPlugin\Data\Exception\ReferenceNotFoundException;
-use Softspring\CmsDataPlugin\Data\Exception\RunPreloadBeforeImportException;
-use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 use Softspring\CmsBundle\Manager\RouteManagerInterface;
 use Softspring\CmsBundle\Manager\RoutePathManagerInterface;
 use Softspring\CmsBundle\Manager\SiteManagerInterface;
@@ -14,6 +10,10 @@ use Softspring\CmsBundle\Model\ContentInterface;
 use Softspring\CmsBundle\Model\RouteInterface;
 use Softspring\CmsBundle\Model\SiteInterface;
 use Softspring\CmsBundle\Utils\Slugger;
+use Softspring\CmsDataPlugin\Data\Exception\InvalidElementException;
+use Softspring\CmsDataPlugin\Data\Exception\ReferenceNotFoundException;
+use Softspring\CmsDataPlugin\Data\Exception\RunPreloadBeforeImportException;
+use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 
 class RouteEntityTransformer implements EntityTransformerInterface
 {

@@ -2,9 +2,9 @@
 
 namespace Softspring\CmsDataPlugin\Data\FieldTransformer;
 
-use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 use Softspring\CmsBundle\Model\SiteInterface;
 use Softspring\CmsBundle\Utils\Slugger;
+use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 
 class SiteFieldTransformer implements FieldTransformerInterface
 {

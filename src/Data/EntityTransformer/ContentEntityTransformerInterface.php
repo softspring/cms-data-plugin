@@ -2,10 +2,10 @@
 
 namespace Softspring\CmsDataPlugin\Data\EntityTransformer;
 
-use Softspring\CmsDataPlugin\Data\Exception\InvalidElementException;
-use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 use Softspring\CmsBundle\Model\ContentInterface;
 use Softspring\CmsBundle\Model\ContentVersionInterface;
+use Softspring\CmsDataPlugin\Data\Exception\InvalidElementException;
+use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 
 interface ContentEntityTransformerInterface extends EntityTransformerInterface
 {

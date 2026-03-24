@@ -2,8 +2,8 @@
 
 namespace Softspring\CmsDataPlugin\Data\FieldTransformer;
 
-use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 use Softspring\CmsBundle\Model\RouteInterface;
+use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 
 class RouteFieldTransformer implements FieldTransformerInterface
 {
