@@ -1,0 +1,25 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    sfs_cms.data_plugin.admin.content.controller:
+        class: Softspring\Component\CrudlController\Controller\CrudlController
+        public: true
+        arguments:
+            $manager: '@Softspring\CmsBundle\Manager\ContentManagerInterface'
+            $configs:
+                entity_attribute: 'content'
+                import:
+                    initialize_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_INITIALIZE
+                    create_entity_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_ENTITY
+                    form_prepare_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_FORM_PREPARE
+                    form_init_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_FORM_INIT
+                    form_valid_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_FORM_VALID
+                    apply_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_APPLY
+                    success_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_SUCCESS
+                    failure_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_FAILURE
+                    form_invalid_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_FORM_INVALID
+                    view_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_VIEW
+                    exception_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENTS_IMPORT_EXCEPTION

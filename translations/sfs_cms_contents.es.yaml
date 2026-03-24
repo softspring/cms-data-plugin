@@ -1,0 +1,52 @@
+admin_page:
+    import:
+        meta.title: "Importar página"
+        title: "Importar página"
+        breadcrumb: "Importar página"
+        actions:
+            import.button: "Importar página"
+            cancel.button: "Cancelar"
+        form:
+            file.label: "Fichero a importar"
+        failed_flash: "Se ha producido un error al importar la página<br/><small>%exception%</small>"
+        duplicated_flash: "Se ha producido un error al importar la página, la página ya existe en la base de datos, intenta importarla como versión<br/><small>%exception%</small>"
+        success_flash: "La página se ha importado"
+
+    import_version:
+        meta.title: "Importar versión"
+        title: "Importar versión"
+        breadcrumb: "Importar versión"
+        actions:
+            import.button: "Importar versión"
+            cancel.button: "Cancelar"
+        form:
+            file.label: "Fichero a importar"
+
+    versions:
+        origin:
+            2: "fixture"
+            3: "cargada"
+        actions:
+            export.link: "Exportar"
+            import_version.link: "Importar versión"
+
+    list:
+        actions:
+            import.link: "Importar página"
+        empty:
+            create_first_content_raw: '<a href="%create_link%">Crea</a> o <a href="%import_link%">importa</a> tu primera página!'
+
+    delete:
+        actions:
+            export.button: "Exportar"
+
+    version_export:
+        failed_flash: "Se ha producido un error al exportar la versión<br/><small>%exception%</small>"
+
+    version_import:
+        success_flash: "La versión se ha importado"
+        failed_flash: "Se ha producido un error al importar la versión<br/><small>%exception%</small>"
+
+    version_delete:
+        actions:
+            export.button: "Exportar"

@@ -10,7 +10,7 @@ use Softspring\CmsBundle\Manager\RouteManagerInterface;
 use Softspring\CmsBundle\Model\ContentInterface;
 use Softspring\CmsBundle\Model\ContentVersionInterface;
 use Softspring\CmsBundle\Request\FlashNotifier;
-use Softspring\CmsBundle\SfsCmsEvents;
+use Softspring\CmsDataPlugin\SfsCmsDataPlugin;
 use Softspring\CmsBundle\Utils\Slugger;
 use Softspring\CmsDataPlugin\Data\DataExporter;
 use Softspring\CmsDataPlugin\IO\ZipArchiveManager;
@@ -43,37 +43,37 @@ class ExportListener extends AbstractContentVersionListener
     public static function getSubscribedEvents(): array
     {
         return [
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_EXPORT_INITIALIZE => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_INITIALIZE => [
                 ['onInitializeGetConfig', 20],
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onEventLoadContentEntity', 9],
                 ['onInitializeUpdateHelperConfig', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_EXPORT_LOAD_ENTITY => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_LOAD_ENTITY => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onLoadEntity', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_EXPORT_NOT_FOUND => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_NOT_FOUND => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onNotFoundAddFlash', 5],
                 ['onNotFoundRedirectToList', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_EXPORT_FOUND => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_FOUND => [
                 ['onEventDispatchContentTypeEvent', 10],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_EXPORT_APPLY => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_APPLY => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onApply', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_EXPORT_SUCCESS => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_SUCCESS => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onSuccess', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_EXPORT_FAILURE => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_FAILURE => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onFailureOrException', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_EXPORT_EXCEPTION => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_EXCEPTION => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onFailureOrException', 0],
             ],

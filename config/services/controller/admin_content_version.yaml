@@ -1,0 +1,35 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    sfs_cms.data_plugin.admin.content_version.controller:
+        class: Softspring\Component\CrudlController\Controller\CrudlController
+        public: true
+        arguments:
+            $manager: '@Softspring\CmsBundle\Manager\ContentVersionManagerInterface'
+            $configs:
+                entity_attribute: 'version'
+                version_import:
+                    initialize_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_INITIALIZE
+                    create_entity_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_ENTITY
+                    form_prepare_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_PREPARE
+                    form_init_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_INIT
+                    form_valid_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_VALID
+                    apply_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_APPLY
+                    success_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_SUCCESS
+                    failure_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_FAILURE
+                    form_invalid_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_INVALID
+                    view_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_VIEW
+                    exception_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_EXCEPTION
+                version_export:
+                    param_converter_key: 'id'
+                    initialize_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_INITIALIZE
+                    load_entity_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_LOAD_ENTITY
+                    not_found_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_NOT_FOUND
+                    found_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_FOUND
+                    apply_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_APPLY
+                    success_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_SUCCESS
+                    failure_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_FAILURE
+                    exception_event_name: !php/const Softspring\CmsDataPlugin\SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_EXPORT_EXCEPTION

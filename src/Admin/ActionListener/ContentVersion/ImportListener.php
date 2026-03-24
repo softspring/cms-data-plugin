@@ -9,7 +9,7 @@ use Softspring\CmsBundle\Manager\ContentVersionManagerInterface;
 use Softspring\CmsBundle\Manager\RouteManagerInterface;
 use Softspring\CmsBundle\Model\ContentVersionInterface;
 use Softspring\CmsBundle\Request\FlashNotifier;
-use Softspring\CmsBundle\SfsCmsEvents;
+use Softspring\CmsDataPlugin\SfsCmsDataPlugin;
 use Softspring\CmsDataPlugin\Data\DataImporter;
 use Softspring\CmsDataPlugin\IO\ZipArchiveManager;
 use Softspring\Component\CrudlController\Event\ApplyEvent;
@@ -47,46 +47,46 @@ class ImportListener extends AbstractContentVersionListener
     public static function getSubscribedEvents(): array
     {
         return [
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_INITIALIZE => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_INITIALIZE => [
                 ['onInitializeGetConfig', 20],
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onEventLoadContentEntity', 9],
                 ['onInitializeUpdateHelperConfig', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_ENTITY => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_ENTITY => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onCreateEntity', 1],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_PREPARE => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_PREPARE => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onFormPrepareResolve', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_INIT => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_INIT => [
                 ['onEventDispatchContentTypeEvent', 10],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_VALID => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_VALID => [
                 ['onEventDispatchContentTypeEvent', 10],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_APPLY => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_APPLY => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onApply', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_SUCCESS => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_SUCCESS => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onSuccess', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_FAILURE => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_FAILURE => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onFailure', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_INVALID => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_FORM_INVALID => [
                 ['onEventDispatchContentTypeEvent', 10],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_VIEW => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_VIEW => [
                 ['onEventDispatchContentTypeEvent', 10],
                 ['onView', 0],
             ],
-            SfsCmsEvents::ADMIN_CONTENT_VERSIONS_IMPORT_EXCEPTION => [
+            SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_EXCEPTION => [
                 ['onEventDispatchContentTypeEvent', 10],
             ],
         ];

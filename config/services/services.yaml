@@ -1,3 +1,7 @@
+imports:
+    - { resource: controller/admin_content.yaml }
+    - { resource: controller/admin_content_version.yaml }
+
 services:
     _defaults:
         autowire: true
@@ -35,6 +39,10 @@ services:
     Softspring\CmsDataPlugin\Form\Admin\ContentVersion\:
         resource: '../../src/Form/Admin/ContentVersion/*'
         tags: [ 'form.type' ]
+
+    Softspring\CmsDataPlugin\Admin\Routing\:
+        resource: '../../src/Admin/Routing/*'
+        tags: [ 'sfs_cms.routing_provider' ]
 
     Softspring\CmsDataPlugin\Admin\ActionListener\Content\ImportListener: ~
 

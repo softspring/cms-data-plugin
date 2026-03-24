@@ -1,0 +1,52 @@
+admin_page:
+    import:
+        meta.title: "Import page"
+        title: "Import page"
+        breadcrumb: "Import page"
+        actions:
+            import.button: "Import page"
+            cancel.button: "Cancel"
+        form:
+            file.label: "Import content file"
+        failed_flash: "An error has been produced during the page import<br/><small>%exception%</small>"
+        duplicated_flash: "An error has been produced during the page import, the page already exists in the database, try to import it as a version<br/><small>%exception%</small>"
+        success_flash: "Page has been imported"
+
+    import_version:
+        meta.title: "Import version"
+        title: "Import version"
+        breadcrumb: "Import version"
+        actions:
+            import.button: "Import version"
+            cancel.button: "Cancel"
+        form:
+            file.label: "Import content file"
+
+    versions:
+        origin:
+            2: "fixture"
+            3: "imported"
+        actions:
+            export.link: "Export"
+            import_version.link: "Import version"
+
+    list:
+        actions:
+            import.link: "Import page"
+        empty:
+            create_first_content_raw: '<a href="%create_link%">Create</a> or <a href="%import_link%">import</a> your first page!'
+
+    delete:
+        actions:
+            export.button: Export
+
+    version_export:
+        failed_flash: "An error has been produced during the version export<br/><small>%exception%</small>"
+
+    version_import:
+        success_flash: "Version has been imported"
+        failed_flash: "An error has been produced during the version import<br/><small>%exception%</small>"
+
+    version_delete:
+        actions:
+            export.button: Export
