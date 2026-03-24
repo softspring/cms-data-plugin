@@ -1,0 +1,43 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $em: '@sfs_cms.entity_manager'
+            $container: '@service_container'
+            $entityTransformers: !tagged_iterator { tag: sfs_cms.data.entity_transformer, default_priority_method: getPriority }
+            $fieldTransformers: !tagged_iterator { tag: sfs_cms.data.field_transformer, default_priority_method: getPriority }
+            $cmsLogger: '@?monolog.logger.cms'
+            $mediaStoragePath: '%sfs_media.storage.filesystem.path%'
+
+    Softspring\CmsDataPlugin\Command\:
+        resource: '../../src/Command/*'
+
+    Softspring\CmsDataPlugin\Data\:
+        resource: '../../src/Data/*'
+
+    Softspring\CmsDataPlugin\IO\:
+        resource: '../../src/IO/*'
+
+    Softspring\CmsDataPlugin\DataFixtures\:
+        resource: '../../src/DataFixtures/*'
+        tags: [ 'doctrine.fixtures.loader' ]
+
+    Softspring\CmsDataPlugin\DataFixtures\Purger\CmsPurgerFactory:
+        tags:
+            - { name: 'doctrine.fixtures.purger_factory', alias: 'cms_purge' }
+
+    Softspring\CmsDataPlugin\Form\Admin\Content\:
+        resource: '../../src/Form/Admin/Content/*'
+        tags: [ 'form.type' ]
+
+    Softspring\CmsDataPlugin\Form\Admin\ContentVersion\:
+        resource: '../../src/Form/Admin/ContentVersion/*'
+        tags: [ 'form.type' ]
+
+    Softspring\CmsDataPlugin\Admin\ActionListener\Content\ImportListener: ~
+
+    Softspring\CmsDataPlugin\Admin\ActionListener\ContentVersion\ImportListener: ~
+
+    Softspring\CmsDataPlugin\Admin\ActionListener\ContentVersion\ExportListener: ~
