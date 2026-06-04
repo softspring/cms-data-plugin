@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Softspring\CmsDataPlugin\DependencyInjection;
 
 use Softspring\CmsDataPlugin\Data\EntityTransformer\EntityTransformerInterface;

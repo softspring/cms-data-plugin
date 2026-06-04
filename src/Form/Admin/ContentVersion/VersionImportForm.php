@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Softspring\CmsDataPlugin\Form\Admin\ContentVersion;
 
 use Softspring\CmsBundle\Validator\ContentZipFile;

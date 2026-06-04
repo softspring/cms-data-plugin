@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Softspring\CmsDataPlugin\Data\EntityTransformer;
 
 use Softspring\CmsDataPlugin\Data\Exception\InvalidElementException;

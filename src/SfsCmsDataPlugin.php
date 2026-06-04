@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Softspring\CmsDataPlugin;
 
 use Softspring\CmsBundle\Plugin\SfsCmsPlugin;
@@ -39,6 +41,7 @@ class SfsCmsDataPlugin extends SfsCmsPlugin
     public const ADMIN_CONTENT_VERSIONS_EXPORT_SUCCESS = 'sfs_cms.admin.content_versions.export_success';
     public const ADMIN_CONTENT_VERSIONS_EXPORT_FAILURE = 'sfs_cms.admin.content_versions.export_failure';
     public const ADMIN_CONTENT_VERSIONS_EXPORT_EXCEPTION = 'sfs_cms.admin.content_versions.export_exception';
+
     public static function getAlias(): string
     {
         return 'sfs_cms_data';
