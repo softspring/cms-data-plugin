@@ -84,6 +84,7 @@ class ImportListener extends AbstractContentVersionListener
             ],
             SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_VIEW => [
                 ['onEventDispatchContentTypeEvent', 10],
+                ['onViewAddEntities', 1],
                 ['onView', 0],
             ],
             SfsCmsDataPlugin::ADMIN_CONTENT_VERSIONS_IMPORT_EXCEPTION => [
