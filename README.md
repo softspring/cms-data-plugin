@@ -6,7 +6,7 @@
 [![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/cms-data-plugin/php?style=flat-square)](https://github.com/softspring/cms-data-plugin/blob/6.0/composer.json)
 [![Downloads](https://img.shields.io/packagist/dt/softspring/cms-data-plugin?style=flat-square)](https://packagist.org/packages/softspring/cms-data-plugin)
 [![CI](https://img.shields.io/github/actions/workflow/status/softspring/cms-data-plugin/ci.yml?branch=6.0&style=flat-square&label=CI)](https://github.com/softspring/cms-data-plugin/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/codecov/c/github/softspring/cms-data-plugin?branch=6.0&style=flat-square)](https://codecov.io/gh/softspring/cms-data-plugin)
+[![Coverage](https://img.shields.io/codecov/c/github/softspring/cms-data-plugin?branch=6.0&style=flat-square)](https://app.codecov.io/gh/softspring/cms-data-plugin/tree/6.0)
 
 CMS Data Plugin adds import, export, and fixtures support to Softspring CMS content.
 
