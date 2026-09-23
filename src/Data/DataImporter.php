@@ -47,21 +47,27 @@ class DataImporter extends AbstractDataImportExport
         $this->em->clear();
         // preload sites
         foreach ($this->cmsConfig->getSites() as $site) {
-            $this->cmsLogger && $this->cmsLogger->info(sprintf('Preload site "%s"', "$site"));
+            if ($this->cmsLogger instanceof LoggerInterface) {
+                $this->cmsLogger->info(sprintf('Preload site "%s"', "$site"));
+            }
             $this->referenceRepository->addReference("site___{$site}", $site);
         }
 
         // do preloading
         foreach ($contents as $type => $elements) {
             foreach ($elements as $data) {
-                $this->cmsLogger && $this->cmsLogger->debug(sprintf('Preload "%s"', "$type"));
+                if ($this->cmsLogger instanceof LoggerInterface) {
+                    $this->cmsLogger->debug(sprintf('Preload "%s"', "$type"));
+                }
                 $this->getDataTransformer($type, $data)->preload($data, $this->referenceRepository);
             }
         }
 
         // import medias before to prevent errors
         foreach ($contents['media'] ?? [] as $data) {
-            $this->cmsLogger && $this->cmsLogger->info(sprintf('Import media %s (%u/%u)', $data['media']['name'], isset($i) ? ++$i : $i = 1, count($contents['media'])));
+            if ($this->cmsLogger instanceof LoggerInterface) {
+                $this->cmsLogger->info(sprintf('Import media %s (%u/%u)', $data['media']['name'], isset($i) ? ++$i : $i = 1, count($contents['media'])));
+            }
             $entity = $this->getDataTransformer('media', $data)->import($data, $this->referenceRepository, $options);
             $this->em->persist($entity);
             $this->em->flush();
@@ -71,7 +77,9 @@ class DataImporter extends AbstractDataImportExport
         // import parent routes before to allow import children
         foreach ($contents['routes'] ?? [] as $routeData) {
             if (RouteInterface::TYPE_PARENT_ROUTE === $routeData['route']['type']) {
-                $this->cmsLogger && $this->cmsLogger->info(sprintf('Import parent route "%s"', $routeData['route']['id']));
+                if ($this->cmsLogger instanceof LoggerInterface) {
+                    $this->cmsLogger->info(sprintf('Import parent route "%s"', $routeData['route']['id']));
+                }
                 $parentRoute = $this->getDataTransformer('routes', $routeData)->import($routeData, $this->referenceRepository, $options);
                 $this->em->persist($parentRoute);
             }
@@ -85,7 +93,9 @@ class DataImporter extends AbstractDataImportExport
                 if ('routes' !== $type || RouteInterface::TYPE_PARENT_ROUTE !== $data['route']['type']) {
                     $dataName = $data[$type]['name'] ?? $data[$type]['id'] ?? current($data)['name'] ?? '';
 
-                    $this->cmsLogger && $this->cmsLogger->info(sprintf('Import %s "%s"', $type, $dataName));
+                    if ($this->cmsLogger instanceof LoggerInterface) {
+                        $this->cmsLogger->info(sprintf('Import %s "%s"', $type, $dataName));
+                    }
                     $entity = $this->getDataTransformer($type, $data)->import($data, $this->referenceRepository, $options);
                     $this->em->persist($entity);
                 }

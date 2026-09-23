@@ -34,7 +34,9 @@ class CmsFixtures extends Fixture implements FixtureGroupInterface
         foreach (['contents', 'routes', 'blocks', 'menus'] as $type) {
             if (is_dir("$this->fixturesPath/$type")) {
                 foreach ((new Finder())->in("$this->fixturesPath/$type")->files() as $contentFile) {
-                    $this->cmsLogger && $this->cmsLogger->debug(sprintf('Fixture "%s/%s" found', $contentFile->getPath(), $contentFile->getFilename()));
+                    if ($this->cmsLogger instanceof LoggerInterface) {
+                        $this->cmsLogger->debug(sprintf('Fixture "%s/%s" found', $contentFile->getPath(), $contentFile->getFilename()));
+                    }
 
                     $data = $this->structuredDataStorage->loadYamlFile($contentFile->getRealPath());
                     $id = $contentFile->getFilenameWithoutExtension();
@@ -45,7 +47,9 @@ class CmsFixtures extends Fixture implements FixtureGroupInterface
 
         if (is_dir("$this->fixturesPath/media")) {
             foreach ((new Finder())->in("$this->fixturesPath/media")->files()->name('*.json') as $mediaConfig) {
-                $this->cmsLogger && $this->cmsLogger->debug(sprintf('Media "%s/%s" found', $mediaConfig->getPath(), $mediaConfig->getFilename()));
+                if ($this->cmsLogger instanceof LoggerInterface) {
+                    $this->cmsLogger->debug(sprintf('Media "%s/%s" found', $mediaConfig->getPath(), $mediaConfig->getFilename()));
+                }
 
                 $data = $this->structuredDataStorage->loadJsonFile($mediaConfig->getRealPath());
                 $id = $mediaConfig->getFilenameWithoutExtension();

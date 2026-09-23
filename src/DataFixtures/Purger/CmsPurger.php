@@ -184,7 +184,6 @@ class CmsPurger implements PurgerInterface, ORMPurgerInterface
                 }
 
                 $targetClass = $em->getClassMetadata($assoc['targetEntity']);
-                \assert($targetClass instanceof ClassMetadata);
                 $targetClassName = $targetClass->getName();
 
                 if (!$sorter->hasNode($targetClassName)) {
