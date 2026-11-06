@@ -14,7 +14,8 @@ It provides admin import/export actions, structured data transformers, fixture l
 
 ## Documentation
 
-Usage documentation belongs in Armonic Documentation.
+[Armonic documentation](https://armonic.softspring.es/6.0/bundles/cms-data-plugin)
+
 
 ## Features
 
