@@ -2,11 +2,11 @@
 
 [![Latest Stable](https://img.shields.io/packagist/v/softspring/cms-data-plugin?label=stable&style=flat-square)](https://github.com/softspring/cms-data-plugin/releases)
 [![Latest Unstable](https://img.shields.io/packagist/v/softspring/cms-data-plugin?label=unstable&style=flat-square&include_prereleases)](https://github.com/softspring/cms-data-plugin/releases)
-[![License](https://img.shields.io/packagist/l/softspring/cms-data-plugin?style=flat-square)](https://github.com/softspring/cms-data-plugin/blob/6.0/LICENSE)
-[![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/cms-data-plugin/php?style=flat-square)](https://github.com/softspring/cms-data-plugin/blob/6.0/composer.json)
+[![License](https://img.shields.io/packagist/l/softspring/cms-data-plugin?style=flat-square)](https://github.com/softspring/cms-data-plugin/blob/6.1/LICENSE)
+[![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/cms-data-plugin/php?style=flat-square)](https://github.com/softspring/cms-data-plugin/blob/6.1/composer.json)
 [![Downloads](https://img.shields.io/packagist/dt/softspring/cms-data-plugin?style=flat-square)](https://packagist.org/packages/softspring/cms-data-plugin)
-[![CI](https://img.shields.io/github/actions/workflow/status/softspring/cms-data-plugin/ci.yml?branch=6.0&style=flat-square&label=CI)](https://github.com/softspring/cms-data-plugin/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/codecov/c/github/softspring/cms-data-plugin?branch=6.0&style=flat-square)](https://app.codecov.io/gh/softspring/cms-data-plugin/tree/6.0)
+[![CI](https://img.shields.io/github/actions/workflow/status/softspring/cms-data-plugin/ci.yml?branch=6.1&style=flat-square&label=CI)](https://github.com/softspring/cms-data-plugin/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/codecov/c/github/softspring/cms-data-plugin?branch=6.1&style=flat-square)](https://app.codecov.io/gh/softspring/cms-data-plugin/tree/6.1)
 
 CMS Data Plugin adds import, export, and fixtures support to Softspring CMS content.
 
@@ -14,7 +14,7 @@ It provides admin import/export actions, structured data transformers, fixture l
 
 ## Documentation
 
-[Armonic documentation](https://armonic.softspring.es/6.0/bundles/cms-data-plugin)
+[Armonic documentation](https://armonic.softspring.es/6.1@dev/bundles/cms-data-plugin)
 
 
 ## Features
