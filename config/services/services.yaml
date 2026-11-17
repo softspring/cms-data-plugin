@@ -10,8 +10,8 @@ services:
         bind:
             $em: '@sfs_cms.entity_manager'
             $container: '@service_container'
-            $entityTransformers: !tagged_iterator { tag: sfs_cms.data.entity_transformer, default_priority_method: getPriority }
-            $fieldTransformers: !tagged_iterator { tag: sfs_cms.data.field_transformer, default_priority_method: getPriority }
+            $entityTransformers: !tagged_iterator { tag: sfs_cms.data.entity_transformer }
+            $fieldTransformers: !tagged_iterator { tag: sfs_cms.data.field_transformer }
             $cmsLogger: '@?monolog.logger.cms'
             $mediaStoragePath: '%sfs_media.storage.filesystem.path%'
 

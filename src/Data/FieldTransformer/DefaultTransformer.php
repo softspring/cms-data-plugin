@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Softspring\CmsDataPlugin\Data\FieldTransformer;
 
 use Softspring\CmsDataPlugin\Data\ReferencesRepository;
+use Symfony\Component\DependencyInjection\Attribute\AsTaggedItem;
 
+#[AsTaggedItem(priority: -255)]
 class DefaultTransformer implements FieldTransformerInterface
 {
     public static function getPriority(): int

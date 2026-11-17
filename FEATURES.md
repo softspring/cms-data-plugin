@@ -14,6 +14,8 @@ This package extends Softspring CMS with data import, export, and fixture workfl
 
 ## Main Features
 
+- Order entity and field transformer services through Symfony `AsTaggedItem` attributes or explicit tag priorities, preserving specialized handlers before the scalar fallback.
+
 - Admin import action for CMS content types.
 - Admin import action for CMS content versions.
 - Admin export action for CMS content versions.

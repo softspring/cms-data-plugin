@@ -6,7 +6,9 @@ namespace Softspring\CmsDataPlugin\Data\FieldTransformer;
 
 use Softspring\CmsDataPlugin\Data\DataTransformer;
 use Softspring\CmsDataPlugin\Data\ReferencesRepository;
+use Symfony\Component\DependencyInjection\Attribute\AsTaggedItem;
 
+#[AsTaggedItem(priority: 0)]
 class ArrayFieldTransformer implements FieldTransformerInterface
 {
     protected DataTransformer $dataTransformer;

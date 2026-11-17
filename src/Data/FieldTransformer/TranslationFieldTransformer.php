@@ -4,7 +4,9 @@ namespace Softspring\CmsDataPlugin\Data\FieldTransformer;
 
 use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 use Softspring\TranslatableBundle\Model\Translation;
+use Symfony\Component\DependencyInjection\Attribute\AsTaggedItem;
 
+#[AsTaggedItem(priority: 100)]
 class TranslationFieldTransformer implements FieldTransformerInterface
 {
     public static function getPriority(): int
