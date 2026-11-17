@@ -8,8 +8,10 @@ use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 use Softspring\MediaBundle\EntityManager\MediaManagerInterface;
 use Softspring\MediaBundle\EntityManager\MediaVersionManagerInterface;
 use Softspring\MediaBundle\Model\MediaInterface;
+use Symfony\Component\DependencyInjection\Attribute\AsTaggedItem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
+#[AsTaggedItem(priority: 0)]
 class MediaEntityTransformer implements EntityTransformerInterface
 {
     protected MediaManagerInterface $mediaManager;

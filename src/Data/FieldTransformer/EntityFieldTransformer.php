@@ -5,7 +5,9 @@ namespace Softspring\CmsDataPlugin\Data\FieldTransformer;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\Mapping\MappingException;
 use Softspring\CmsDataPlugin\Data\ReferencesRepository;
+use Symfony\Component\DependencyInjection\Attribute\AsTaggedItem;
 
+#[AsTaggedItem(priority: 10)]
 class EntityFieldTransformer implements FieldTransformerInterface
 {
     protected EntityManagerInterface $em;

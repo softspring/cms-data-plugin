@@ -11,7 +11,9 @@ use Softspring\CmsDataPlugin\Data\Exception\InvalidElementException;
 use Softspring\CmsDataPlugin\Data\Exception\ReferenceNotFoundException;
 use Softspring\CmsDataPlugin\Data\Exception\RunPreloadBeforeImportException;
 use Softspring\CmsDataPlugin\Data\ReferencesRepository;
+use Symfony\Component\DependencyInjection\Attribute\AsTaggedItem;
 
+#[AsTaggedItem(priority: 0)]
 class BlockEntityTransformer implements EntityTransformerInterface
 {
     protected BlockManagerInterface $blockManager;

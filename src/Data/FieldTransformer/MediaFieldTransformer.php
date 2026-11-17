@@ -5,7 +5,9 @@ namespace Softspring\CmsDataPlugin\Data\FieldTransformer;
 use Exception;
 use Softspring\CmsDataPlugin\Data\ReferencesRepository;
 use Softspring\MediaBundle\Model\MediaInterface;
+use Symfony\Component\DependencyInjection\Attribute\AsTaggedItem;
 
+#[AsTaggedItem(priority: 100)]
 class MediaFieldTransformer implements FieldTransformerInterface
 {
     public function __construct(protected ?string $mediaStoragePath = null)

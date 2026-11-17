@@ -5,7 +5,9 @@ namespace Softspring\CmsDataPlugin\Data\FieldTransformer;
 use Softspring\CmsBundle\Model\SiteInterface;
 use Softspring\CmsBundle\Utils\Slugger;
 use Softspring\CmsDataPlugin\Data\ReferencesRepository;
+use Symfony\Component\DependencyInjection\Attribute\AsTaggedItem;
 
+#[AsTaggedItem(priority: 100)]
 class SiteFieldTransformer implements FieldTransformerInterface
 {
     public static function getPriority(): int
