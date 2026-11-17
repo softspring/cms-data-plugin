@@ -9,11 +9,13 @@ use Softspring\CmsBundle\Model\ContentInterface;
 use Softspring\CmsBundle\Model\MenuInterface;
 use Softspring\CmsBundle\Model\RouteInterface;
 use Softspring\CmsDataPlugin\Data\DataExporter;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[AsCommand(name: 'sfs:cms:dump-fixtures')]
 class DumpFixturesCommand extends Command
 {
     protected DataExporter $dataExporter;
@@ -30,7 +32,6 @@ class DumpFixturesCommand extends Command
 
     protected function configure(): void
     {
-        $this->setName('sfs:cms:dump-fixtures');
         $this->addArgument('elements', InputArgument::OPTIONAL);
     }
 
